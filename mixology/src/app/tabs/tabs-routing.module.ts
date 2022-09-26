@@ -8,27 +8,27 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
-        loadChildren: () => import('../tab1/tab1.module').then(m => m.Tab1PageModule)
+        path: 'gioco',
+        loadChildren: () => import('../gioco/gioco.module').then(m => m.GiocoPageModule)
       },
       {
-        path: 'tab2',
-        loadChildren: () => import('../tab2/tab2.module').then(m => m.Tab2PageModule)
+        path: 'ordina-drink',
+        loadChildren: () => import('../ordina-drink/ordina-drink.module').then(m => m.OrdinaDrinkPageModule)
       },
       {
-        path: 'tab3',
-        loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule)
+        path: 'posso-fare',
+        loadChildren: () => import('../posso-fare/posso-fare.module').then(m => m.PossoFarePageModule)
       },
       {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/tabs/ordina-drink',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '/tabs/ordina-drink',
     pathMatch: 'full'
   }
 ];
