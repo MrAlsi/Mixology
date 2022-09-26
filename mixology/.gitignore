@@ -32,3 +32,8 @@ npm-debug.log*
 /www
 node_modules/
 .env
+
+# Firebase
+.firebase
+*-debug.log
+.runtimeconfig.json
