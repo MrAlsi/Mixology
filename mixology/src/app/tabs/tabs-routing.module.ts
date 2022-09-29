@@ -20,15 +20,14 @@ const routes: Routes = [
         loadChildren: () => import('../posso-fare/posso-fare.module').then(m => m.PossoFarePageModule)
       },
       {
-        path: '',
-        redirectTo: '/tabs/ordina-drink',
-        pathMatch: 'full'
+        path: 'drink/:drink',
+        loadChildren: () => import('../schermata-drink-gioco/schermata-drink-gioco-routing.module').then(m => m.SchermataDrinkGiocoPageRoutingModule)
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/ordina-drink',
+    redirectTo: '/tabs/gioco',
     pathMatch: 'full'
   }
 ];

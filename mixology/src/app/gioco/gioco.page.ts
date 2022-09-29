@@ -10,14 +10,16 @@ import { DataServiceService } from '../services/data-service.service';
 export class GiocoPage implements OnInit {
 
   drinks: Drink[] = [];
+  isModalOpen = false;
 
   constructor(private dataService: DataServiceService) {
     this.dataService.getDrinks().subscribe(res => {
       //console.log("res", res);
-      res.forEach(drink => {
+      this.drinks = res;
+      /*res.forEach(drink => {
         //console.log(drink.Nome);
         let d: Drink = {
-          nome: drink.Nome,
+          nome: drink.nome,
           bicchiere: drink.bicchiere,
           ingredienti: drink.ingredienti,
           ricetta: drink.ricetta,
@@ -25,7 +27,7 @@ export class GiocoPage implements OnInit {
           foto: drink.foto
         }
         this.drinks.push(d)
-      })
+      })*/
       console.log("DRinks", this.drinks);
     })
     
@@ -34,5 +36,7 @@ export class GiocoPage implements OnInit {
   ngOnInit() {
   }
 
-  
+  setOpen(isOpen: boolean) {
+    this.isModalOpen = isOpen;
+  }
 }

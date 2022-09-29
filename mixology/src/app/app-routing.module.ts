@@ -16,6 +16,10 @@ const routes: Routes = [
   {
     path: 'posso-fare',
     loadChildren: () => import('./posso-fare/posso-fare.module').then( m => m.PossoFarePageModule)
+  },
+  {
+    path: 'schermata-drink-gioco',
+    loadChildren: () => import('./schermata-drink-gioco/schermata-drink-gioco.module').then( m => m.SchermataDrinkGiocoPageModule)
   }
 
 ];

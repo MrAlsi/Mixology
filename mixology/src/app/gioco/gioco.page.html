@@ -3,7 +3,16 @@
     <ion-title>Gioco</ion-title>
   </ion-toolbar>
 </ion-header>
-<div *ngFor="let drink of drinks">
-  <p>{{drink.nome}} </p>
+
+<div id="drinks">
+  <ion-card *ngFor="let drink of drinks" href="./tabs/drink/{{drink.nome}}">
+    <ion-card-header>
+      <ion-card-title>{{drink.nome}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <!-- Immagine del drink se preso o no -->
+    </ion-card-content>
+  </ion-card>
 </div>
+
 <ion-content>
