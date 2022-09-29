@@ -11,14 +11,18 @@ export class SchermataDrinkGiocoPage implements OnInit {
   drink: string;
   drinkData;
   drinkUtente;
-  constructor(private route: ActivatedRoute, private dataService: DataServiceService) {  }
+  constructor(private route: ActivatedRoute, private dataService: DataServiceService) {
+    
+  }
 
   ngOnInit() {
     this.drink = this.route.snapshot.paramMap.get('drink');
     this.dataService.getDrink(this.drink).subscribe(res => {
-      console.log("D:", res);
-    })
+      this.drinkData = res;
+      console.log("Drink:", this.drinkData);
+    });
 
+    
   }
 
 }
