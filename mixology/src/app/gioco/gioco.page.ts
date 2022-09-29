@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Drink } from '../Drink';
+import { Drink } from '../Interface/Drink';
 import { DataServiceService } from '../services/data-service.service';
 
 @Component({
@@ -14,20 +14,7 @@ export class GiocoPage implements OnInit {
 
   constructor(private dataService: DataServiceService) {
     this.dataService.getDrinks().subscribe(res => {
-      //console.log("res", res);
       this.drinks = res;
-      /*res.forEach(drink => {
-        //console.log(drink.Nome);
-        let d: Drink = {
-          nome: drink.nome,
-          bicchiere: drink.bicchiere,
-          ingredienti: drink.ingredienti,
-          ricetta: drink.ricetta,
-          curiosita: drink.curiosita,
-          foto: drink.foto
-        }
-        this.drinks.push(d)
-      })*/
       console.log("DRinks", this.drinks);
     })
     

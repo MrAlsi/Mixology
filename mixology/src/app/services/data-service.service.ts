@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
 import { collection, collectionData, docData, Firestore } from '@angular/fire/firestore';
 import { doc } from '@firebase/firestore';
-
 import { Observable } from 'rxjs';
-import { Drink } from '../Drink';
+import { Drink } from '../Interface/Drink';
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class DataServiceService {
+
   constructor(private firestore: Firestore) {}
 
   //Restituisce tutti i drink presenti nel DB
